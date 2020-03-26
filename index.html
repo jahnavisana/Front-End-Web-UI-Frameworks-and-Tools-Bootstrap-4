@@ -29,7 +29,7 @@
            <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
        </ul>
        <span class="navbar-text">
-           <a data-toggle="modal" data-target="#loginModal">
+           <a id="login">
                <span class="fa fa-sign-in"></span>Login
            </a>
        </span>
@@ -42,7 +42,7 @@
            <div class="modal-content">
                <div class="modal-header ">
                    <h4 class="modal-title"> Login</h4>
-               <button type="button" class="close" data-dismiss="modal"> &times; </button>
+               <button type="button" class="close" id="closeBut"> &times; </button>
                </div>
                <div class="modal-body">
                 <form>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-secondary btn-sm ml-auto" id="closeBu">Cancel</button>
                         <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                     </div>
                 </form>
@@ -77,7 +77,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Reserve a Table </h4>
-            <button type="button" class="close" data-dismiss="modal"> &times; </button>
+            <button type="button" class="close" id="closeres" > &times; </button>
             </div>
             <div class="modal-body">
                 <form>
@@ -139,7 +139,7 @@
                     </div>
                     </div>
                     <div class="btn-group offset-md-2" role="group">
-                        <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-secondary btn-sm ml-auto" id="closere">Cancel</button>
                         <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>
                         </div>
                 </form>
@@ -160,7 +160,7 @@
                     <img src="img/logo.png" class="image-fluid">
                 </div>
                 <div class="col-sm-3">
-                    <a class="btn btn-block nav-link btn-warning" data-toggle="modal" data-target="#reserveModal">
+                    <a class="btn btn-block nav-link btn-warning" id="reserve">
                         Reserve Table
                     </a>
                     
@@ -206,6 +206,7 @@
 
                     </div>
                     <ol class="carousel-indicators">
+                      
                         <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#mycarousel" data-slide-to="1"></li>
                         <li data-target="#mycarousel" data-slide-to="2"></li>
@@ -333,7 +334,7 @@
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function(){
-        $("#mycarousel").carousel( { interval:00 } );
+        $("#mycarousel").carousel( { interval:2000 } );
         $("#carouselButton").click(function(){
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
                     $("#mycarousel").carousel('pause');
@@ -348,6 +349,34 @@
             });
     });
 </script>
+<script>
+    $(document).ready(function(){
+      $("#login").click(function(){
+        $("#loginModal").modal();
+      });
+      $("#closeBut").click(function(){
+        $("#loginModal").modal("hide");
+      });
+      $("#closeBu").click(function(){
+        $("#loginModal").modal("hide");
+      });
+    });
+    
+    </script>
+    <script>
+        $(document).ready(function(){
+          $("#reserve").click(function(){
+            $("#reserveModal").modal();
+          });
+          $("#closeres").click(function(){
+            $("#reserveModal").modal("hide");
+          });
+          $("#closere").click(function(){
+            $("#reserveModal").modal("hide");
+          });
+        });
+        
+        </script>
 
 </body>
 
